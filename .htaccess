@@ -1,0 +1,27 @@
+# =================================================
+# FINAL SAFE .htaccess FOR LANDING PAGE
+# =================================================
+
+# Enable rewrite engine
+RewriteEngine On
+
+# -------------------------------------------------
+# GZIP compression (safe on shared hosting)
+# -------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# -------------------------------------------------
+# Security (no performance impact)
+# -------------------------------------------------
+Options -Indexes
+
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js
+</IfModule>
